@@ -33,22 +33,19 @@ public void insert(int value){
     public int size(){
         return arr.length;
     }
-    public boolean delete(int value){
-        for (int i = 0; i < nElemen; i++) {
-            if(value == arr[i]){
-                break;
+public boolean delete(int value){
+    for (int i = 0; i < nElemen; i++) {
+        if(arr[i] == value){
+            for (int j = i; j < nElemen - 1; j++) {
+                arr[j] = arr[j+1];
             }
-            if(i == nElemen){
-                return false;
-            }else{
-                for (int j = 0; j < nElemen; j++) {
-                    arr[j] = arr[j+1];
-                }
-                nElemen--;
-                return true;
-            }
-        }return false;
+            nElemen--;
+            return true;
+        }
     }
+    return false;
+}
+
         public void display() { 
         for (int i = 0; i < nElemen; i++) { 
             System.out.print(arr[i] + " "); 

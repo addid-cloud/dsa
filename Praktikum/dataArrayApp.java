@@ -38,21 +38,19 @@ class DataArray{
         nElemen++;
     }
     public boolean delete(long searchNim){
-        for (int i = 0; i < nElemen; i++) {
-            if(mhs[i].getNim()==searchNim){
-                break;
+    for (int i = 0; i < nElemen; i++) {
+        if(mhs[i].getNim() == searchNim){
+            // geser elemen ke kiri mulai dari posisi i
+            for (int j = i; j < nElemen - 1; j++) {
+                mhs[j] = mhs[j+1];
             }
-            if(i == nElemen){
-                return false;
-            }else{
-                for (int j = 0; j < nElemen; j++) {
-                    mhs[j] = mhs[j+1];
-                }
-                nElemen--;
-                return true;
-            }
-        }return false;
+            nElemen--;
+            return true;
+        }
     }
+    return false; // kalau tidak ketemu
+}
+
     public void display(){
         for (int i = 0; i < nElemen; i++) {
             mhs[i].displayMhs();
