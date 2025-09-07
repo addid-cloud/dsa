@@ -8,10 +8,15 @@ class HighArray{
     }
 public void insert(int value){
     int i ;
-    for (i = nElemen - 1; i >= 0; i--) {
-        arr[i + 1] = arr[i]; 
+    for (i = 0; i < nElemen; i++) {
+        if(arr[i] > value){
+            break;
+        }
     }
-    arr[i + 1] = value; 
+    for (int j = nElemen; j >i; j--) {
+        arr[j] = arr[j-1]; 
+    }
+    arr[i] = value; 
     // arr[nElemen] = value;
     nElemen++;
 }
@@ -78,6 +83,7 @@ public class HighArrayApp {
     arr.delete(80); 
     arr.delete(55); 
     arr.insert(1);
+    arr.insert(100);
     arr.display(); 
 } 
 }
