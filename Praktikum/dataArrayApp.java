@@ -1,3 +1,4 @@
+package Praktikum;
 class Mahasiswa{
     private long nim;
     private String nama;

@@ -1,3 +1,4 @@
+package Praktikum;
 class HighArray{
     private int[] arr;
     private int nElemen;

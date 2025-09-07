@@ -16,15 +16,6 @@ public static int[][] Pytagoras(int[][] data, int[] data2) {
         );
         data[i][4] = (int)jarak;
     }
-    // for (int i = 0; i < data.length; i++) {
-    //     double jarak = 0;
-    //     for (int j = 1; j < 4; j++) {
-    //         for (int h= 0; h < data2.length; h++) {
-    //             jarak += Math.sqrt(Math.pow((double)data[i][j] - (double)data2[h],2));
-    //         }
-    //     }
-            // data[i][data[i].length-1] = (int) jarak; 
-    // }
     return data;
 }
 public static int[][] sort(int[][] data){
