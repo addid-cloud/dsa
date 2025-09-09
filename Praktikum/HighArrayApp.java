@@ -79,9 +79,9 @@ public class HighArrayApp {
     } else { 
         System.out.println(key + " tidak ditemukan"); 
     } 
-    arr.delete(00); 
-    arr.delete(80); 
-    arr.delete(55); 
+    // arr.delete(00); 
+    // arr.delete(80); 
+    // arr.delete(55); 
     arr.insert(1);
     arr.insert(100);
     arr.display(); 

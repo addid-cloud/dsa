@@ -16,6 +16,9 @@ class Mahasiswa{
     public long getNim(){
         return nim;
     }
+    public String getNama(){
+        return nama;
+    }
 }
 
 class DataArray{
@@ -58,34 +61,95 @@ class DataArray{
             mhs[i].displayMhs();
         }
     }
+     public void bubblesort(){
+        int i;
+        Mahasiswa temp;
+        for (i = nElemen-1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if(mhs[j].getNim() > mhs[j+1].getNim()){
+                    temp = mhs[j];
+                    mhs[j] = mhs[j+1];
+                    mhs[j+1] = temp;
+                }
+            }
+        }
 }
+    public void selectionsort(){
+        int i,j,min;
+        Mahasiswa temp;
+        for (i = 0; i < nElemen-1; i++) {
+            min = i;
+            for (j = i+1; j < nElemen; j++) {
+                if(mhs[j].getNim() < mhs[min].getNim()){
+                    min = j;
+                }
+            }
+            temp = mhs[i];
+            mhs[i] = mhs[min];
+            mhs[min] = temp;
+        }
+    }
+    public void ortByName() {
+        int i;
+        int min;
+        int j;
+        Mahasiswa temp;
+        for (i = 0; i < nElemen - 1; i++) {
+            min = i;
+            for (j = i + 1; j < nElemen; j++) {
+                if (mhs[j].getNama().compareTo(mhs[min].getNama()) < 0) {
+                    min = j;
+                }
+            }
+            temp = mhs[i];
+            mhs[i] = mhs[min];
+            mhs[min] = temp;
+        } 
+} 
+    // public void InsertionSort() { 
+    // int i, curIn; 
+    // for (curIn= 1; curIn < nElemen; curIn++) { 
+    // int temp = arr[curIn]; 
+    // i = curIn; 
+    // while (i > 0 && arr[i - 1] >= temp) { 
+    // arr[i] = arr[i - 1]; 
+    // i--; 
+    // } 
+    // arr[i] = temp; 
+    // } 
+    // } 
+    } 
+
 
 class DataArrayApp {
     public static void main(String[] args) {
         int maxSize = 100;
         DataArray arr;
         arr = new DataArray(maxSize);
+        arr.insert(16650210, "ahmad", "sidoarjo");
         arr.insert(16650200, "jundi", "malang");
-        arr.insert(16650210, "Ahmad", "sidoarjo");
-        arr.insert(16650220, "Ismail", "Banyuwangi");
+        arr.insert(16650220, "ismail", "Banyuwangi");
+        arr.insert(16650250, "rais", "ambon");
         arr.insert(16650230, "sofi", "semarang");
         arr.insert(16650240, "dinda", "bandung");
-        arr.insert(16650250, "rais", "ambon");
         arr.insert(16650260, "helmi", "madura");
         arr.insert(16650270, "agung", "madiun");
         arr.insert(16650280, "arina", "malang");
+        arr.bubblesort();
+        // arr.selectionsort();
+        // arr.ortByName();
         arr.display();
-        long searchKey =  16650270;
-        Mahasiswa mhs = arr.find(searchKey);
-        if(mhs != null){
-            System.out.println("ketemu");
-            mhs.displayMhs();
-        }else{
-            System.out.println("tidak ketemu" + searchKey);
-        }
-        searchKey = 16650240;
-        System.out.println("\n hapus nim :" + searchKey +"\n");
-        arr.delete(searchKey);
-        arr.display();
+        // long searchKey =  16650270;
+        // Mahasiswa mhs = arr.find(searchKey);
+        // if(mhs != null){
+        //     System.out.println("ketemu");
+        //     mhs.displayMhs();
+        // }else{
+        //     System.out.println("tidak ketemu" + searchKey);
+        // }
+        // searchKey = 16650240;
+        // System.out.println("\n hapus nim :" + searchKey +"\n");
+        // arr.delete(searchKey);
+        // arr.display();
     }
 }
