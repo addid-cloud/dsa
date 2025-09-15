@@ -40,7 +40,6 @@ class DataArray{
     public boolean delete(long searchNim){
     for (int i = 0; i < nElemen; i++) {
         if(mhs[i].getNim() == searchNim){
-            // geser elemen ke kiri mulai dari posisi i
             for (int j = i; j < nElemen - 1; j++) {
                 mhs[j] = mhs[j+1];
             }
@@ -48,7 +47,7 @@ class DataArray{
             return true;
         }
     }
-    return false; // kalau tidak ketemu
+    return false; 
 }
 
     public void display(){
