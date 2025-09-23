@@ -1,5 +1,7 @@
 package Praktikum;
 
+import java.util.Scanner;
+
 class Stack2 {
     private int maxSize;
     private char[] stackArray;
@@ -54,5 +56,13 @@ public class AppPembalik {
 
         System.out.println("Kata asli   : " + kata);
         System.out.println("Kata dibalik: " + hasil);
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 2; i++) {
+            System.out.print("Kata asli   : ");
+            kata = sc.nextLine();
+            pembalik = new Pembalik(kata);
+            hasil = pembalik.balik();
+            System.out.println("Kata dibalik: " + hasil);
+        }
     }
 }

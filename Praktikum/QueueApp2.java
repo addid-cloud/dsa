@@ -93,5 +93,6 @@ public class QueueApp2 {
         System.out.println("\nantrian kosong");
         antrian.tampil();
         System.out.println("0 Person");
+        antrian.tampil();
     }
 }
