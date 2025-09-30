@@ -1,5 +1,7 @@
 package Praktikum;
 
+import yt.Link;
+
 class Link {
     public int Data;
     public Link next;
