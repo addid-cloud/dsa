@@ -1,4 +1,7 @@
 package Praktikum;
+
+import java.util.ArrayList;
+
 class LinkQueue{
     String nim;
     String nama;
@@ -66,16 +69,36 @@ public class MhsLink {
 
         queue.insert("1665100", "Dee");
         queue.insert("1665200", "Deaja");
-        queue.displayQueue();
-
         queue.insert("1665300", "Ami");
         queue.insert("1665400", "Haya");
         queue.insert("1665500", "Yati");
-        queue.displayQueue();
 
-        queue.remove();
-        queue.remove();
-        queue.displayQueue();
+        // ambil semua data queue ke ArrayList
+        ArrayList<LinkQueue> list = new ArrayList<>();
+        LinkQueue current = queue.first;
+        while (current != null) {
+            list.add(current);
+            current = current.next;
+        }
+
+        System.out.println("Data Asli:");
+        MhsSorter.display(list);
+
+        // 1. Merge Sort berdasarkan Nama
+        System.out.println("Merge Sort by Nama:");
+        MhsSorter.mergeSortByNama(list);
+        MhsSorter.display(list);
+
+        // 2. Shell Sort berdasarkan NIM
+        System.out.println("Shell Sort by NIM:");
+        MhsSorter.shellSortByNim(list);
+        MhsSorter.display(list);
+
+        // 3. Quick Sort berdasarkan Nama
+        System.out.println("Quick Sort by Nama:");
+        MhsSorter.quickSortByNama(list, 0, list.size() - 1);
+        MhsSorter.display(list);
+ 
     
     }
 
