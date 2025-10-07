@@ -3,17 +3,13 @@ import java.util.ArrayList;
 
 class MhsSorter {
 
-    // ============= MERGE SORT by NAMA =============
     public static void mergeSortByNama(ArrayList<LinkQueue> list) {
-        if (list.size() <= 1) return;
-
+        if (list.size() <= 1) return; 
         int mid = list.size() / 2;
         ArrayList<LinkQueue> left = new ArrayList<>(list.subList(0, mid));
         ArrayList<LinkQueue> right = new ArrayList<>(list.subList(mid, list.size()));
-
         mergeSortByNama(left);
         mergeSortByNama(right);
-
         merge(list, left, right);
     }
 
@@ -30,10 +26,9 @@ class MhsSorter {
         while (j < right.size()) list.set(k++, right.get(j++));
     }
 
-    // ============= SHELL SORT by NIM =============
     public static void shellSortByNim(ArrayList<LinkQueue> list) {
         int n = list.size();
-        for (int gap = n / 2; gap > 0; gap /= 2) {
+        for (int gap = n / 2; gap > 0; gap /= 2) { 
             for (int i = gap; i < n; i++) {
                 LinkQueue temp = list.get(i);
                 int j = i;
@@ -46,7 +41,6 @@ class MhsSorter {
         }
     }
 
-    // ============= QUICK SORT by NAMA =============
     public static void quickSortByNama(ArrayList<LinkQueue> list, int low, int high) {
         if (low < high) {
             int pi = partition(list, low, high);
@@ -69,11 +63,9 @@ class MhsSorter {
         LinkQueue temp = list.get(i + 1);
         list.set(i + 1, list.get(high));
         list.set(high, temp);
-
         return i + 1;
     }
 
-    // ============= Display Helper =============
     public static void display(ArrayList<LinkQueue> list) {
         for (LinkQueue mhs : list) {
             mhs.displayMhs();
